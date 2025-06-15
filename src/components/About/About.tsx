@@ -1,6 +1,9 @@
 import React from 'react';
 import './About.css';
 
+// Define the base path for your repository on GitHub Pages
+const REPO_BASE_PATH = '/antony-hyson-seltran/'; // IMPORTANT: Ensure this matches your repo name exactly
+
 const About: React.FC = () => {
   const scrollToExperience = () => {
     window.location.href = '#experience';
@@ -14,12 +17,14 @@ const About: React.FC = () => {
         <div className="about-details-container">
           <div className="about-containers">
             <div className="details-container">
-              <img src="/assets/experience.png" alt="Experience icon" className="icon" />
+              {/* Corrected path for experience icon */}
+              <img src={`${REPO_BASE_PATH}assets/experience.png`} alt="Experience icon" className="icon" />
               <h3>Experience</h3>
               <p>2+ years<br />Cyber Security & IT</p>
             </div>
             <div className="details-container">
-              <img src="/assets/education.png" alt="Education icon" className="icon" />
+              {/* Corrected path for education icon */}
+              <img src={`${REPO_BASE_PATH}assets/education.png`} alt="Education icon" className="icon" />
               <h3>Education</h3>
               <p>MSc Cyber Security Analytics<br />BE Computer Science Eng.</p>
             </div>
@@ -30,13 +35,14 @@ const About: React.FC = () => {
             </p>
           </div>
         </div>
+        {/* Corrected path for arrow icon */}
+        <img
+          src={`${REPO_BASE_PATH}assets/arrow.png`}
+          alt="Arrow icon"
+          className="icon arrow"
+          onClick={scrollToExperience}
+        />
       </div>
-      <img
-        src="/assets/arrow.png"
-        alt="Arrow icon"
-        className="icon arrow"
-        onClick={scrollToExperience}
-      />
     </section>
   );
 };

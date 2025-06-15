@@ -2,18 +2,19 @@
 import React from 'react';
 import './Contact.css'; // Your Contact section's specific CSS (if any)
 
+// Define the base path for your repository on GitHub Pages
+const REPO_BASE_PATH = '/antony-hyson-seltran/'; // IMPORTANT: Ensure this matches your repo name exactly
+
 const Contact: React.FC = () => {
   return (
-    // Removed ref and className for animation
     <section id="contact">
       <p className="section__text__p1">Get in Touch</p>
       <h1 className="title">Contact Me</h1>
-      {/* Removed ref and className for animation */}
       <div className="contact-info-container">
         {/* Email contact info */}
         <div className="contact-info">
           <img
-            src="/assets/email.png" // Ensure this image path is correct
+            src={`${REPO_BASE_PATH}assets/email.png`} // <-- CORRECTED PATH
             alt="Email icon"
             className="icon contact-icon email-icon"
           />
@@ -22,7 +23,7 @@ const Contact: React.FC = () => {
         {/* LinkedIn contact info */}
         <div className="contact-info">
           <img
-            src="/assets/linkedin.png" // Ensure this image path is correct
+            src={`${REPO_BASE_PATH}assets/linkedin.png`} // <-- CORRECTED PATH
             alt="LinkedIn icon"
             className="icon contact-icon"
           />

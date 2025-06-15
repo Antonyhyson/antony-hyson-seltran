@@ -1,7 +1,9 @@
-// ... (imports remain the same)
 import React from 'react';
 import Slider from '../Slider/Slider';
 import './Experience.css';
+
+// Define the base path for your repository on GitHub Pages
+const REPO_BASE_PATH = '/antony-hyson-seltran/'; // IMPORTANT: Ensure this matches your repo name exactly
 
 const Experience: React.FC = () => {
   return (
@@ -14,7 +16,8 @@ const Experience: React.FC = () => {
           {/* The Slider component now encapsulates the articles AND its navigation buttons */}
           <Slider id="cyber-exp-wrapper"> 
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>CE/CE+ Compliance Consultant</h3>
                 <p>Risk Crew</p>
@@ -23,7 +26,8 @@ const Experience: React.FC = () => {
               </div>
             </article>
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>Cyber Security Consultant (Freelance)</h3>
                 <p>August 2023 - May 2025 (1 year 10 months)</p>
@@ -32,7 +36,8 @@ const Experience: React.FC = () => {
               </div>
             </article>
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>Student Intern</h3>
                 <p>CyberHakz Pvt-Ltd</p>
@@ -49,7 +54,8 @@ const Experience: React.FC = () => {
           {/* The Slider component now encapsulates the articles AND its navigation buttons */}
           <Slider id="other-exp-wrapper"> 
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>Front of House</h3>
                 <p>The George Public House</p>
@@ -59,7 +65,8 @@ const Experience: React.FC = () => {
               </div>
             </article>
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>Food Runner</h3>
                 <p>The George Public House</p>
@@ -69,7 +76,8 @@ const Experience: React.FC = () => {
               </div>
             </article>
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>Freelance Photographer</h3>
                 <p>March 2019 - May 2025 (6 years 3 months)</p>
@@ -78,7 +86,8 @@ const Experience: React.FC = () => {
               </div>
             </article>
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>Student Brand Ambassador</h3>
                 <p>Amber</p>
@@ -88,7 +97,8 @@ const Experience: React.FC = () => {
               </div>
             </article>
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>Team Member</h3>
                 <p>Popeyes Louisiana Chicken UK</p>
@@ -98,7 +108,8 @@ const Experience: React.FC = () => {
               </div>
             </article>
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>Sales Partner</h3>
                 <p>John Lewis & Partners</p>
@@ -108,7 +119,8 @@ const Experience: React.FC = () => {
               </div>
             </article>
             <article>
-              <img src="/assets/checkmark.png" alt="Experience icon" className="icon" />
+              {/* Corrected path */}
+              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
               <div>
                 <h3>Photographer</h3>
                 <p>Sportifying India</p>
@@ -120,8 +132,9 @@ const Experience: React.FC = () => {
           </Slider>
         </div>
       </div>
+      {/* Corrected path for arrow icon */}
       <img
-        src="/assets/arrow.png"
+        src={`${REPO_BASE_PATH}assets/arrow.png`}
         alt="Arrow icon"
         className="icon arrow"
         onClick={() => (window.location.href = '#certifications')}
