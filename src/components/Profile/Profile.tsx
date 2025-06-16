@@ -3,23 +3,22 @@ import './Profile.css';
 
 // Define the base path for your repository on GitHub Pages
 // This MUST exactly match your GitHub repository name
-const REPO_BASE_PATH = '/antony-hyson-seltran/'; 
+const REPO_BASE_PATH = '/antony-hyson-seltran/'; // Ensure this matches your repo name exactly
 
 const Profile: React.FC = () => {
   const handleDownloadCV = () => {
-    // Path now includes the repository base path
+    // This is correct for your PDF, as it also lives in public/assets
     window.open(`${REPO_BASE_PATH}assets/Antony_Hyson_Seltran_CV.pdf`, '_blank');
   };
 
   const handleContactInfo = () => {
-    // Smooth scroll to the contact section using the anchor ID
     window.location.href = '#contact';
   };
 
   return (
     <section id="profile">
       <div className="section__pic-container">
-        {/* Corrected path for profile picture */}
+        {/* CORRECTED: Use REPO_BASE_PATH to build the full URL */}
         <img src={`${REPO_BASE_PATH}assets/profile-pic.jpg`} alt="Antony Hyson Seltran profile picture" />
       </div>
       <div className="section__text">
@@ -35,14 +34,15 @@ const Profile: React.FC = () => {
           </button>
         </div>
         <div id="socials-container">
+          {/* CORRECTED: Apply the same pattern for your social icons */}
           <img
-            src={`${REPO_BASE_PATH}assets/linkedin.png`} // <-- Corrected path for LinkedIn icon
+            src={`${REPO_BASE_PATH}assets/linkedin.png`}
             alt="LinkedIn profile"
             className="icon"
             onClick={() => window.open('https://www.linkedin.com/in/antonyhysonseltran', '_blank')}
           />
           <img
-            src={`${REPO_BASE_PATH}assets/email.png`} // <-- Corrected path for Email icon
+            src={`${REPO_BASE_PATH}assets/email.png`}
             alt="Email"
             className="icon"
             onClick={() => window.location.href = 'mailto:work.antonyhyson@gmail.com'}
