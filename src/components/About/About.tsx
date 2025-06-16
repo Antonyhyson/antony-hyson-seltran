@@ -26,7 +26,7 @@ const About: React.FC = () => {
               {/* UPDATED: education.png */}
               <img src={`${REPO_BASE_PATH}assets/education.png`} alt="Education icon" className="icon" />
               <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
+              <p>M.Sc. Cybersecurity Analytics<br />B.E Computer Science and Engineering</p>
             </div>
           </div>
           <div className="text-container">
