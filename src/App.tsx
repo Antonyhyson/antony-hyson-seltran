@@ -1,7 +1,5 @@
-// src/App.tsx (updated snippet)
 import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar/Navbar'; // <-- ADD THIS LINE
+import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
@@ -9,18 +7,22 @@ import Certifications from './components/Certifications/Certifications';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-const REPO_BASE_PATH = '/antony-hyson-seltran/'; 
 
-function App() {
+import './index.css'; // Assuming your main CSS is here or directly linked
+
+// Define the base path for your repository on GitHub Pages
+const REPO_BASE_PATH = '/antony-hyson-seltran/'; // IMPORTANT: Ensure this matches your repo name exactly
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <video autoPlay loop muted className="background-video">
-        {/* UPDATED: BG_Video.mp4 */}
+    <>
+      {/* UPDATED: Video source path */}
+      <video autoPlay loop muted playsInline id="background-video">
         <source src={`${REPO_BASE_PATH}assets/BG_Video.mp4`} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <Navbar /> {/* <-- ADD THIS LINE */}
+      <Navbar />
       <Profile />
       <About />
       <Experience />
@@ -28,7 +30,6 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
-      {/* Profile will go here next, then About, etc. */}
     </>
   );
 };
