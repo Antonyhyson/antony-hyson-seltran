@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
-      <p className="section__text__p1 signature">Built by Antony Hyson Seltran & AIGC</p>
+      <p className="section__text__p1 signature">Built by Antony Hyson Seltran</p>
     </section>
   );
 };
