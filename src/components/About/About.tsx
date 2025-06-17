@@ -31,7 +31,7 @@ const About: React.FC = () => {
           </div>
           <div className="text-container">
             <p>
-              I am Antony Hyson Seltran, an aspiring Cyber Security Analyst, Ethical Hacker, and Network Engineer with a strong passion for safeguarding digital landscapes. Holding both a Bachelor's and a Master's degree in Computer Science, my academic journey has equipped me with a comprehensive understanding of complex systems and cutting-edge technologies.
+              I am Antony Hyson Seltran, an aspiring Cyber Security Analyst, Ethical Hacker, and Network Engineer with a strong passion for safeguarding digital landscapes. Holding both a Bachelor's in Computer Science and Engineering and a Master's degree in Cybersecurity Analytics, my academic journey has equipped me with a comprehensive understanding of complex systems and cutting-edge technologies.
             </p>
           </div>
         </div>
