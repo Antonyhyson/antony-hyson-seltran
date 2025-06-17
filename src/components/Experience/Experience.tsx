@@ -59,7 +59,7 @@ const Experience: React.FC = () => {
               <div>
                 <h3>Front of House</h3>
                 <p>The George Public House</p>
-                <p>October 2024 - Present</p>
+                <p>October 2024 - May 2025</p>
                 <p>Greater London, England, United Kingdom</p>
                 <p>I quickly progressed into management by demonstrating strong adaptability and work ethic, consistently acquiring new skills in a fast-paced technical environment. I enhanced multitasking, interpersonal, and customer engagement abilities, effectively conveying complex concepts and building professional relationships.</p>
               </div>
