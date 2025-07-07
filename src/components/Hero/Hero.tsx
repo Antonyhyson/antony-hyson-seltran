@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
   };
 
   const handleDownloadCV = () => {
-    window.open('/antony-hyson-seltran/assets/Antony_Hyson_Seltran_CV.pdf', '_blank');
+    window.open('/assets/Antony_Hyson_Seltran_CV.pdf', '_blank');
   };
 
   const handleContact = () => {
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
         <motion.div className="hero-image" variants={itemVariants}>
           <div className="image-container">
             <img
-              src="/antony-hyson-seltran/assets/profile-pic.jpg"
+              src="/assets/profile-pic.jpg"
               alt="Antony Hyson Seltran"
               className="profile-image"
             />

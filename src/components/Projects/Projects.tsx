@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
     {
       title: "Network Anomaly Detection System",
       description: "Developed and evaluated a novel network anomaly detection system using machine learning models (Random Forest, MLP, XGBoost) to effectively detect diverse cyber threats across multiple benchmark datasets, achieving high accuracy and generalization.",
-      image: "/antony-hyson-seltran/assets/NADS.png",
+      image: "/assets/NADS.png",
       technologies: ["Python", "Machine Learning", "XGBoost", "Random Forest", "Network Security"],
       github: "https://github.com/Antonyhyson/Development-of-a-Network-Anomaly-Detection-System-for-Enhanced-Cybersecurity.git",
       demo: null,
@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
     {
       title: "Product Availability Checker",
       description: "Developed a hybrid mobile app which improved user engagement by 30% with cross-platform compatibility and received 95% positive feedback, enhancing inventory workflows for retailers.",
-      image: "/antony-hyson-seltran/assets/PAC.png",
+      image: "/assets/PAC.png",
       technologies: ["React Native", "JavaScript", "Mobile Development", "API Integration"],
       github: "https://github.com/Antonyhyson/PRODUCT-AVAILABILITY-CHECKER.git",
       demo: null,
@@ -53,7 +53,7 @@ const Projects: React.FC = () => {
     {
       title: "Solana Blockchain Voting Protocol",
       description: "Coordinated a mini project on Solana Blockchain Voting, achieving over 1000 transactions per second and designing a secure, decentralized voting protocol with a 3-member team.",
-      image: "/antony-hyson-seltran/assets/Solana.png",
+      image: "/assets/Solana.png",
       technologies: ["Solana", "Blockchain", "Rust", "Smart Contracts", "Cryptography"],
       github: "https://github.com/Antonyhyson/Basic-Voting-System-Using-Blockchain.git",
       demo: null,
@@ -63,7 +63,7 @@ const Projects: React.FC = () => {
     {
       title: "EXIF Metadata Analysis Tool",
       description: "Developed an EXIF metadata analysis tool to efficiently extract and analyze metadata from image files, streamlining forensic investigations and data analysis processes.",
-      image: "/antony-hyson-seltran/assets/EXIF.png",
+      image: "/assets/EXIF.png",
       technologies: ["Python", "Digital Forensics", "Metadata Analysis", "Image Processing"],
       github: "https://github.com/Antonyhyson/EXIFTOOL.git",
       demo: null,
@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
     {
       title: "Caesar Cipher Decryption Tool",
       description: "Implemented a Python-based tool for decrypting Caesar Cipher and ROT13 encrypted messages, demonstrating foundational cryptographic understanding.",
-      image: "/antony-hyson-seltran/assets/ROT13.png",
+      image: "/assets/ROT13.png",
       technologies: ["Python", "Cryptography", "Algorithm Implementation", "Security"],
       github: "https://github.com/Antonyhyson/DecryptingCaesarCipher-Rot13.git",
       demo: null,
@@ -83,7 +83,7 @@ const Projects: React.FC = () => {
     {
       title: "Educational Keylogger",
       description: "Created a basic keylogger application for educational purposes, showcasing understanding of system interaction and data capture techniques in cybersecurity.",
-      image: "/antony-hyson-seltran/assets/Keylogger.png",
+      image: "/assets/Keylogger.png",
       technologies: ["Python", "System Programming", "Security Research", "Educational"],
       github: "https://github.com/Antonyhyson/Keylogger.git",
       demo: null,
