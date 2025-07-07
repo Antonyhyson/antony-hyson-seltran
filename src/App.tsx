@@ -1,36 +1,35 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
+import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Experience from './components/Experience/Experience';
-import Certifications from './components/Certifications/Certifications';
+import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-
-import './index.css'; // Assuming your main CSS is here or directly linked
-
-// Define the base path for your repository on GitHub Pages
-const REPO_BASE_PATH = '/antony-hyson-seltran/'; // IMPORTANT: Ensure this matches your repo name exactly
+import Background3D from './components/Background3D/Background3D';
+import ScrollProgress from './components/ScrollProgress/ScrollProgress';
+import './styles/globals.css';
 
 const App: React.FC = () => {
   return (
-    <>
-      {/* UPDATED: Video source path */}
-      <video autoPlay loop muted playsInline id="background-video">
-        <source src={`${REPO_BASE_PATH}assets/BG_Video.mp4`} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <Navbar />
-      <Profile />
-      <About />
-      <Experience />
-      <Certifications />
-      <Projects />
-      <Contact />
-      <Footer />
-    </>
+    <Router>
+      <div className="app">
+        <Background3D />
+        <ScrollProgress />
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 

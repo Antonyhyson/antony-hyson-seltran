@@ -1,79 +1,167 @@
-// ... (imports remain the same)
 import React from 'react';
-import Slider from '../Slider/Slider';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { ExternalLink, Github, Shield, Smartphone, Network, Search, Lock, Code } from 'lucide-react';
 import './Projects.css';
 
-// Define the base path for your repository on GitHub Pages
-const REPO_BASE_PATH = '/antony-hyson-seltran/'; // IMPORTANT: Ensure this matches your repo name exactly
-
 const Projects: React.FC = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  const projects = [
+    {
+      title: "Network Anomaly Detection System",
+      description: "Developed and evaluated a novel network anomaly detection system using machine learning models (Random Forest, MLP, XGBoost) to effectively detect diverse cyber threats across multiple benchmark datasets, achieving high accuracy and generalization.",
+      image: "/antony-hyson-seltran/assets/NADS.png",
+      technologies: ["Python", "Machine Learning", "XGBoost", "Random Forest", "Network Security"],
+      github: "https://github.com/Antonyhyson/Development-of-a-Network-Anomaly-Detection-System-for-Enhanced-Cybersecurity.git",
+      demo: null,
+      icon: <Network size={24} />,
+      category: "Machine Learning"
+    },
+    {
+      title: "Product Availability Checker",
+      description: "Developed a hybrid mobile app which improved user engagement by 30% with cross-platform compatibility and received 95% positive feedback, enhancing inventory workflows for retailers.",
+      image: "/antony-hyson-seltran/assets/PAC.png",
+      technologies: ["React Native", "JavaScript", "Mobile Development", "API Integration"],
+      github: "https://github.com/Antonyhyson/PRODUCT-AVAILABILITY-CHECKER.git",
+      demo: null,
+      icon: <Smartphone size={24} />,
+      category: "Mobile Development"
+    },
+    {
+      title: "Solana Blockchain Voting Protocol",
+      description: "Coordinated a mini project on Solana Blockchain Voting, achieving over 1000 transactions per second and designing a secure, decentralized voting protocol with a 3-member team.",
+      image: "/antony-hyson-seltran/assets/Solana.png",
+      technologies: ["Solana", "Blockchain", "Rust", "Smart Contracts", "Cryptography"],
+      github: "https://github.com/Antonyhyson/Basic-Voting-System-Using-Blockchain.git",
+      demo: null,
+      icon: <Shield size={24} />,
+      category: "Blockchain"
+    },
+    {
+      title: "EXIF Metadata Analysis Tool",
+      description: "Developed an EXIF metadata analysis tool to efficiently extract and analyze metadata from image files, streamlining forensic investigations and data analysis processes.",
+      image: "/antony-hyson-seltran/assets/EXIF.png",
+      technologies: ["Python", "Digital Forensics", "Metadata Analysis", "Image Processing"],
+      github: "https://github.com/Antonyhyson/EXIFTOOL.git",
+      demo: null,
+      icon: <Search size={24} />,
+      category: "Digital Forensics"
+    },
+    {
+      title: "Caesar Cipher Decryption Tool",
+      description: "Implemented a Python-based tool for decrypting Caesar Cipher and ROT13 encrypted messages, demonstrating foundational cryptographic understanding.",
+      image: "/antony-hyson-seltran/assets/ROT13.png",
+      technologies: ["Python", "Cryptography", "Algorithm Implementation", "Security"],
+      github: "https://github.com/Antonyhyson/DecryptingCaesarCipher-Rot13.git",
+      demo: null,
+      icon: <Lock size={24} />,
+      category: "Cryptography"
+    },
+    {
+      title: "Educational Keylogger",
+      description: "Created a basic keylogger application for educational purposes, showcasing understanding of system interaction and data capture techniques in cybersecurity.",
+      image: "/antony-hyson-seltran/assets/Keylogger.png",
+      technologies: ["Python", "System Programming", "Security Research", "Educational"],
+      github: "https://github.com/Antonyhyson/Keylogger.git",
+      demo: null,
+      icon: <Code size={24} />,
+      category: "Security Research"
+    }
+  ];
+
   return (
-    <section id="projects">
-      <p className="section__text__p1">Discover My</p>
-      <h1 className="title">Innovations</h1>
-      <div className="experience-details-container">
-        <div className="details-container color-container">
-          <h2 className="experience-sub-title project-title">Key Projects</h2>
-          {/* The Slider component now encapsulates the articles AND its navigation buttons */}
-          <Slider id="projects-wrapper">
-            <article>
-              {/* UPDATED: Image path */}
-              <img src={`${REPO_BASE_PATH}assets/PAC.png`} alt="Product Availability Checker" className="project-img"/>
-              <div>
-                <h3><a href="https://github.com/Antonyhyson/PRODUCT-AVAILABILITY-CHECKER.git" target="_blank" rel="noopener noreferrer">PRODUCT AVAILABILITY CHECKER</a></h3>
-                <p>Developed a hybrid mobile app which improved user engagement by 30% with cross-platform compatibility and received 95% positive feedback, enhancing inventory workflows for retailers.</p>
-              </div>
-            </article>
-            <article>
-              {/* UPDATED: Image path */}
-              <img src={`${REPO_BASE_PATH}assets/NADS.png`} alt="Network Anomaly Detection System" className="project-img"/>
-              <div>
-                <h3><a href="https://github.com/Antonyhyson/Development-of-a-Network-Anomaly-Detection-System-for-Enhanced-Cybersecurity.git" target="_blank" rel="noopener noreferrer">Network Anomaly Detection System</a></h3>
-                <p>Developed and evaluated a novel network anomaly detection system using machine learning models (Random Forest, MLP, XGBoost) to effectively detect diverse cyber threats across multiple benchmark datasets, achieving high accuracy and generalization.</p>
-              </div>
-            </article>
-            <article>
-              {/* UPDATED: Image path */}
-              <img src={`${REPO_BASE_PATH}assets/Solana.png`} alt="Solana Blockchain Voting Protocol" className="project-img"/>
-              <div>
-                <h3><a href="https://github.com/Antonyhyson/Basic-Voting-System-Using-Blockchain.git" target="_blank" rel="noopener noreferrer">Solana Blockchain Voting Protocol</a></h3>
-                <p>Coordinated a mini project on Solana Blockchain Voting, achieving over 1000 transactions per second and designing a secure, decentralized voting protocol with a 3-member team.</p>
-              </div>
-            </article>
-            <article>
-              {/* UPDATED: Image path */}
-              <img src={`${REPO_BASE_PATH}assets/EXIF.png`} alt="EXIF Metadata Analysis Tool" className="project-img"/>
-              <div>
-                <h3><a href="https://github.com/Antonyhyson/EXIFTOOL.git" target="_blank" rel="noopener noreferrer">EXIF Metadata Analysis Tool</a></h3>
-                <p>Developed an EXIF metadata analysis tool to efficiently extract and analyze metadata from image files, streamlining forensic investigations and data analysis processes.</p>
-              </div>
-            </article>
-            <article>
-              {/* UPDATED: Image path */}
-              <img src={`${REPO_BASE_PATH}assets/ROT13.png`} alt="Decrypting Caesar Cipher - Rot13" className="project-img"/>
-              <div>
-                <h3><a href="https://github.com/Antonyhyson/DecryptingCaesarCipher-Rot13.git" target="_blank" rel="noopener noreferrer">Decrypting Caesar Cipher - Rot13</a></h3>
-                <p>Implemented a Python-based tool for decrypting Caesar Cipher and ROT13 encrypted messages, demonstrating foundational cryptographic understanding.</p>
-              </div>
-            </article>
-            <article>
-              {/* UPDATED: Image path */}
-              <img src={`${REPO_BASE_PATH}assets/Keylogger.png`} alt="Keylogger Application" className="project-img"/>
-              <div>
-                <h3><a href="https://github.com/Antonyhyson/Keylogger.git" target="_blank" rel="noopener noreferrer">Keylogger Application</a></h3>
-                <p>Created a basic keylogger application for educational purposes, showcasing understanding of system interaction and data capture techniques in cybersecurity.</p>
-              </div>
-            </article>
-          </Slider>
-        </div>
+    <section className="projects section" id="projects">
+      <div className="container">
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
+          <motion.div className="section-header" variants={itemVariants}>
+            <h2 className="section-title">Featured Projects</h2>
+            <p className="section-subtitle">
+              Innovative solutions and practical applications showcasing my technical expertise
+            </p>
+          </motion.div>
+
+          <div className="projects-grid">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                className="project-card"
+                variants={itemVariants}
+                whileHover={{ y: -10 }}
+              >
+                <div className="project-image">
+                  <img src={project.image} alt={project.title} />
+                  <div className="project-overlay">
+                    <div className="project-icon">{project.icon}</div>
+                    <span className="project-category">{project.category}</span>
+                  </div>
+                </div>
+                
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
+                  
+                  <div className="project-technologies">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span key={techIndex} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                  
+                  <div className="project-links">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      <Github size={18} />
+                      <span>Code</span>
+                    </a>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <ExternalLink size={18} />
+                        <span>Demo</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
-      {/* UPDATED: Arrow image path */}
-      <img
-        src={`${REPO_BASE_PATH}assets/arrow.png`}
-        alt="Arrow icon"
-        className="icon arrow"
-        onClick={() => (window.location.href = '#contact')}
-      />
     </section>
   );
 };

@@ -1,144 +1,187 @@
 import React from 'react';
-import Slider from '../Slider/Slider';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { Calendar, MapPin, Building } from 'lucide-react';
 import './Experience.css';
 
-// Define the base path for your repository on GitHub Pages
-const REPO_BASE_PATH = '/antony-hyson-seltran/'; // IMPORTANT: Ensure this matches your repo name exactly
-
 const Experience: React.FC = () => {
-  return (
-    <section id="experience">
-      <p className="section__text__p1">Explore My</p>
-      <h1 className="title">Professional Journey</h1>
-      <div className="experience-details-container">
-        <div className="details-container">
-          <h2 className="experience-sub-title">Cybersecurity Experience</h2>
-          {/* The Slider component now encapsulates the articles AND its navigation buttons */}
-          <Slider id="cyber-exp-wrapper"> 
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>CE/CE+ Compliance Consultant</h3>
-                <p>Risk Crew</p>
-                <p>June 2025 - Present (1 month)</p>
-                <p>London Area, United Kingdom</p>
-              </div>
-            </article>
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>Cyber Security Consultant (Freelance)</h3>
-                <p>August 2023 - May 2025 (1 year 10 months)</p>
-                <p>London Area, United Kingdom</p>
-                <p>Performed comprehensive risk assessments on 150+ applications, reducing security incidents by 40% and strengthening data protection for over 1,000 users. I also created and implemented security awareness training programs for 200+ employees, resulting in a 60% improvement in compliance metrics.</p>
-              </div>
-            </article>
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>Student Intern</h3>
-                <p>CyberHakz Pvt-Ltd</p>
-                <p>March 2022 - March 2022 (1 month)</p>
-                <p>Chennai, Tamil Nadu, India</p>
-                <p>Facilitated incident response for over 50 cyber threats with a 95% protocol adherence rate, minimizing system downtime. I engineered an EXIF metadata analysis tool which reduced investigation time by 60%, optimizing technical workflows.</p>
-              </div>
-            </article>
-          </Slider>
-        </div>
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-        <div className="details-container">
-          <h2 className="experience-sub-title">Other Experience</h2>
-          {/* The Slider component now encapsulates the articles AND its navigation buttons */}
-          <Slider id="other-exp-wrapper"> 
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>Front of House</h3>
-                <p>The George Public House</p>
-                <p>October 2024 - May 2025</p>
-                <p>Greater London, England, United Kingdom</p>
-                <p>I quickly progressed into management by demonstrating strong adaptability and work ethic, consistently acquiring new skills in a fast-paced technical environment. I enhanced multitasking, interpersonal, and customer engagement abilities, effectively conveying complex concepts and building professional relationships.</p>
-              </div>
-            </article>
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>Food Runner</h3>
-                <p>The George Public House</p>
-                <p>January 2025 - May 2025 (4 months)</p>
-                <p>Greater London, England, United Kingdom</p>
-                <p>During my tenure as a Food Runner, I consistently demonstrated effective communication and strong team collaboration to ensure smooth service operations.</p>
-              </div>
-            </article>
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>Freelance Photographer</h3>
-                <p>March 2019 - May 2025 (6 years 3 months)</p>
-                <p>London Area, United Kingdom</p>
-                <p>As a Freelance Photographer, I developed and honed my creative and technical skills by capturing diverse subjects and delivering high-quality visual content to clients.</p>
-              </div>
-            </article>
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>Student Brand Ambassador</h3>
-                <p>Amber</p>
-                <p>August 2023 - April 2025 (1 year 10 months)</p>
-                <p>Newark, Delaware, United States</p>
-                <p>I increased brand awareness and engagement through strategic outreach and social media campaigns, significantly contributing to impactful marketing initiatives and guiding teams effectively.</p>
-              </div>
-            </article>
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>Team Member</h3>
-                <p>Popeyes Louisiana Chicken UK</p>
-                <p>April 2024 - August 2024 (5 months)</p>
-                <p>Exeter, England, United Kingdom</p>
-                <p>As a Team Member, I efficiently handled customer orders and maintained operational standards in a fast-paced food service environment.</p>
-              </div>
-            </article>
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>Sales Partner</h3>
-                <p>John Lewis & Partners</p>
-                <p>November 2023 - January 2024 (3 months)</p>
-                <p>Exeter, England, United Kingdom</p>
-                <p>I drove a 20% increase in holiday sales by executing tailored strategies and streamlined inventory, while also boosting customer satisfaction and average transaction value by 15% through personalized product recommendations.</p>
-              </div>
-            </article>
-            <article>
-              {/* Corrected path */}
-              <img src={`${REPO_BASE_PATH}assets/checkmark.png`} alt="Experience icon" className="icon" />
-              <div>
-                <h3>Photographer</h3>
-                <p>Sportifying India</p>
-                <p>August 2022 - January 2023 (6 months)</p>
-                <p>Chennai, Tamil Nadu, India</p>
-                <p>In this role, I captured high-quality sports event photography, contributing to the visual content strategy of Sportifying India.</p>
-              </div>
-            </article>
-          </Slider>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  const experiences = [
+    {
+      title: "CE/CE+ Compliance Consultant",
+      company: "Risk Crew",
+      location: "London Area, United Kingdom",
+      period: "June 2025 - Present",
+      duration: "1 month",
+      type: "cybersecurity",
+      description: "Leading compliance initiatives and risk assessment strategies for enterprise clients.",
+      highlights: []
+    },
+    {
+      title: "Cyber Security Consultant (Freelance)",
+      company: "Self-Employed",
+      location: "London Area, United Kingdom",
+      period: "August 2023 - May 2025",
+      duration: "1 year 10 months",
+      type: "cybersecurity",
+      description: "Provided comprehensive cybersecurity consulting services to various organizations.",
+      highlights: [
+        "Performed comprehensive risk assessments on 150+ applications",
+        "Reduced security incidents by 40%",
+        "Strengthened data protection for over 1,000 users",
+        "Created security awareness training programs for 200+ employees",
+        "Achieved 60% improvement in compliance metrics"
+      ]
+    },
+    {
+      title: "Student Intern",
+      company: "CyberHakz Pvt-Ltd",
+      location: "Chennai, Tamil Nadu, India",
+      period: "March 2022",
+      duration: "1 month",
+      type: "cybersecurity",
+      description: "Gained hands-on experience in cybersecurity operations and incident response.",
+      highlights: [
+        "Facilitated incident response for over 50 cyber threats",
+        "Achieved 95% protocol adherence rate",
+        "Minimized system downtime through efficient response",
+        "Engineered EXIF metadata analysis tool",
+        "Reduced investigation time by 60%"
+      ]
+    },
+    {
+      title: "Front of House",
+      company: "The George Public House",
+      location: "Greater London, England, United Kingdom",
+      period: "October 2024 - May 2025",
+      duration: "8 months",
+      type: "other",
+      description: "Demonstrated leadership and adaptability in a fast-paced environment.",
+      highlights: [
+        "Quickly progressed into management role",
+        "Enhanced multitasking and interpersonal skills",
+        "Improved customer engagement abilities",
+        "Built strong professional relationships"
+      ]
+    },
+    {
+      title: "Student Brand Ambassador",
+      company: "Amber",
+      location: "Newark, Delaware, United States",
+      period: "August 2023 - April 2025",
+      duration: "1 year 10 months",
+      type: "other",
+      description: "Led marketing initiatives and brand awareness campaigns.",
+      highlights: [
+        "Increased brand awareness through strategic outreach",
+        "Managed social media campaigns",
+        "Contributed to impactful marketing initiatives",
+        "Guided teams effectively"
+      ]
+    }
+  ];
+
+  const cyberExperiences = experiences.filter(exp => exp.type === 'cybersecurity');
+  const otherExperiences = experiences.filter(exp => exp.type === 'other');
+
+  const ExperienceCard: React.FC<{ experience: typeof experiences[0], index: number }> = ({ experience, index }) => (
+    <motion.div
+      className="experience-card"
+      variants={itemVariants}
+      whileHover={{ y: -5 }}
+    >
+      <div className="experience-header">
+        <div className="experience-title-section">
+          <h3 className="experience-title">{experience.title}</h3>
+          <div className="experience-company">
+            <Building size={16} />
+            <span>{experience.company}</span>
+          </div>
+        </div>
+        <div className="experience-meta">
+          <div className="experience-period">
+            <Calendar size={16} />
+            <span>{experience.period}</span>
+          </div>
+          <div className="experience-location">
+            <MapPin size={16} />
+            <span>{experience.location}</span>
+          </div>
         </div>
       </div>
-      {/* Corrected path for arrow icon */}
-      <img
-        src={`${REPO_BASE_PATH}assets/arrow.png`}
-        alt="Arrow icon"
-        className="icon arrow"
-        onClick={() => (window.location.href = '#certifications')}
-      />
+      
+      <p className="experience-description">{experience.description}</p>
+      
+      {experience.highlights.length > 0 && (
+        <ul className="experience-highlights">
+          {experience.highlights.map((highlight, idx) => (
+            <li key={idx}>{highlight}</li>
+          ))}
+        </ul>
+      )}
+    </motion.div>
+  );
+
+  return (
+    <section className="experience section" id="experience">
+      <div className="container">
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
+          <motion.div className="section-header" variants={itemVariants}>
+            <h2 className="section-title">Professional Journey</h2>
+            <p className="section-subtitle">
+              Explore my career progression and key achievements in cybersecurity and beyond
+            </p>
+          </motion.div>
+
+          <div className="experience-content">
+            <motion.div className="experience-section" variants={itemVariants}>
+              <h3 className="experience-section-title">Cybersecurity Experience</h3>
+              <div className="experience-timeline">
+                {cyberExperiences.map((experience, index) => (
+                  <ExperienceCard key={index} experience={experience} index={index} />
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div className="experience-section" variants={itemVariants}>
+              <h3 className="experience-section-title">Other Experience</h3>
+              <div className="experience-timeline">
+                {otherExperiences.map((experience, index) => (
+                  <ExperienceCard key={index} experience={experience} index={index} />
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };
