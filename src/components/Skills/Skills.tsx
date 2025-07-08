@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Shield, Code, Network, Database, Lock, Search, AlertTriangle, Users } from 'lucide-react';
+import { Shield, Code, Network, Lock, AlertTriangle } from 'lucide-react';
 import './Skills.css';
 
 const Skills: React.FC = () => {

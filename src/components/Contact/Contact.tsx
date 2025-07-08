@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Linkedin, Github } from 'lucide-react'; // Ensure all Lucide icons are imported
+import { Mail, MapPin, Send, Linkedin, Github } from 'lucide-react'; // Ensure all Lucide icons are imported
 import './Contact.css'; // Make sure this CSS import is present and correct
 
 const Contact: React.FC = () => {

@@ -107,7 +107,7 @@ const Experience: React.FC = () => {
   const cyberExperiences = experiences.filter(exp => exp.type === 'cybersecurity');
   const otherExperiences = experiences.filter(exp => exp.type === 'other');
 
-  const ExperienceCard: React.FC<{ experience: typeof experiences[0], index: number }> = ({ experience, index }) => (
+  const ExperienceCard: React.FC<{ experience: typeof experiences[0], index: number }> = ({ experience }) => (
     <motion.div
       className="experience-card"
       variants={itemVariants}
