@@ -67,9 +67,9 @@ const Hero: React.FC = () => {
           </motion.h1>
           
           <motion.div className="hero-subtitle" variants={itemVariants}>
-            <span className="subtitle-role">Cybersecurity Analyst</span>
+            <span className="subtitle-role">CE/CE+ Compliance Consultant</span>
             <span className="subtitle-separator">•</span>
-            <span className="subtitle-role">Ethical Hacker</span>
+            <span className="subtitle-role">Cybersecurity Analyst</span>
           </motion.div>
           
           <motion.p className="hero-description" variants={itemVariants}>
