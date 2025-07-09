@@ -30,6 +30,9 @@ const Hero: React.FC = () => {
   };
 
   const handleDownloadCV = () => {
+    // This path is already absolute, and Vite's base should handle it for the PDF.
+    // If the PDF also doesn't load, you might need to adjust this as well to:
+    // window.open(import.meta.env.BASE_URL + 'assets/Antony_Hyson_Seltran_CV.pdf', '_blank');
     window.open('/assets/Antony_Hyson_Seltran_CV.pdf', '_blank');
   };
 
@@ -118,7 +121,7 @@ const Hero: React.FC = () => {
         <motion.div className="hero-image" variants={itemVariants}>
           <div className="image-container">
             <img
-              src="/assets/profile-pic.jpg"
+              src={import.meta.env.BASE_URL + 'assets/profile-pic.jpg'} // MODIFIED THIS LINE
               alt="Antony Hyson Seltran"
               className="profile-image"
             />
