@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Shield, Code, Network, Lock, AlertTriangle } from 'lucide-react';
+import { Shield, Code, Network, Lock, Award } from 'lucide-react'; // Changed AlertTriangle to Award
 import './Skills.css';
 
 const Skills: React.FC = () => {
@@ -77,16 +77,17 @@ const Skills: React.FC = () => {
   ];
 
   const certifications = [
-    "IT Security Foundations: Core Concepts",
-    "CISCO Ethical Hacker",
-    "AI Governance Certification",
-    "Introduction to Cybersecurity (Cisco)",
-    "Networking Basics (Cisco)",
-    "PrivacyOps Certification",
-    "Official ISC2 CC Online Self-Paced Training",
-    "AIG - Shields Up: Cybersecurity Job Simulation",
-    "Datacom - Cybersecurity Job Simulation",
-    "Mastercard - Cybersecurity Job Simulation"
+    { name: "Cyber Essential Assessor", url: "https://registry.blockmarktech.com/certificates/2f2806d9-f14e-4be5-a34a-6093d8beb73d/?share_key=c-5onhW4HhBnK4nmKkP5gb8LlfoVZIQ9NsQw2OdD_NE" },
+    { name: "IT Security Foundations: Core Concepts", url: null },
+    { name: "CISCO Ethical Hacker", url: null },
+    { name: "AI Governance Certification", url: null },
+    { name: "Introduction to Cybersecurity (Cisco)", url: null },
+    { name: "Networking Basics (Cisco)", url: null },
+    { name: "PrivacyOps Certification", url: null },
+    { name: "Official ISC2 CC Online Self-Paced Training", url: null },
+    { name: "AIG - Shields Up: Cybersecurity Job Simulation", url: null },
+    { name: "Datacom - Cybersecurity Job Simulation", url: null },
+    { name: "Mastercard - Cybersecurity Job Simulation", url: null }
   ];
 
   return (
@@ -152,9 +153,15 @@ const Skills: React.FC = () => {
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="certification-icon">
-                      <AlertTriangle size={16} />
+                      <Award size={16} />
                     </div>
-                    <span className="certification-name">{cert}</span>
+                    {cert.url ? (
+                      <a href={cert.url} target="_blank" rel="noopener noreferrer" className="certification-name-link">
+                        {cert.name}
+                      </a>
+                    ) : (
+                      <span className="certification-name">{cert.name}</span>
+                    )}
                   </motion.div>
                 ))}
               </div>
