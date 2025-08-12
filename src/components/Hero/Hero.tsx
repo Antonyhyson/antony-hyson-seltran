@@ -1,5 +1,3 @@
-// src/components/Hero/Hero.tsx
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -89,10 +87,10 @@ const Hero: React.FC = () => {
               <Mail size={18} />
               Contact Me
             </button>
-            {/* --- NEW BUTTON ADDED HERE --- */}
+            {/* --- THIS IS THE NEW BUTTON --- */}
             <button
               className="btn btn-secondary"
-              onClick={() => window.open('https://your-photography-url.com', '_blank')}
+              onClick={() => window.open('https://antonyhyson.github.io/photography-portfolio/', '_blank')}
             >
               <Camera size={18} />
               Photography
