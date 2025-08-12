@@ -1,7 +1,9 @@
+// src/components/Hero/Hero.tsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Download, Mail, Github, Linkedin, ChevronDown } from 'lucide-react';
+import { Download, Mail, Github, Linkedin, ChevronDown, Camera } from 'lucide-react'; // Import Camera icon
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -30,9 +32,6 @@ const Hero: React.FC = () => {
   };
 
   const handleDownloadCV = () => {
-    // This path is already absolute, and Vite's base should handle it for the PDF.
-    // If the PDF also doesn't load, you might need to adjust this as well to:
-    // window.open(import.meta.env.BASE_URL + 'assets/Antony_Hyson_Seltran_CV.pdf', '_blank');
     window.open('/assets/Antony_Hyson_Seltran_CV.pdf', '_blank');
   };
 
@@ -63,24 +62,24 @@ const Hero: React.FC = () => {
           <motion.div className="hero-greeting" variants={itemVariants}>
             <span className="greeting-text">Hello, I'm</span>
           </motion.div>
-          
+
           <motion.h1 className="hero-title" variants={itemVariants}>
             <span className="title-name">Antony Hyson</span>
             <span className="title-surname">Seltran</span>
           </motion.h1>
-          
+
           <motion.div className="hero-subtitle" variants={itemVariants}>
             <span className="subtitle-role">CE/CE+ Compliance Consultant</span>
             <span className="subtitle-separator">•</span>
             <span className="subtitle-role">Cybersecurity Analyst</span>
           </motion.div>
-          
+
           <motion.p className="hero-description" variants={itemVariants}>
-            Passionate about safeguarding digital landscapes with expertise in 
-            cybersecurity analytics, ethical hacking, and network engineering. 
+            Passionate about safeguarding digital landscapes with expertise in
+            cybersecurity analytics, ethical hacking, and network engineering.
             Committed to protecting organizations from evolving cyber threats.
           </motion.p>
-          
+
           <motion.div className="hero-actions" variants={itemVariants}>
             <button className="btn btn-primary" onClick={handleDownloadCV}>
               <Download size={18} />
@@ -90,8 +89,16 @@ const Hero: React.FC = () => {
               <Mail size={18} />
               Contact Me
             </button>
+            {/* --- NEW BUTTON ADDED HERE --- */}
+            <button
+              className="btn btn-secondary"
+              onClick={() => window.open('https://your-photography-url.com', '_blank')}
+            >
+              <Camera size={18} />
+              Photography
+            </button>
           </motion.div>
-          
+
           <motion.div className="hero-social" variants={itemVariants}>
             <a
               href="https://www.linkedin.com/in/antonyhysonseltran"
@@ -117,11 +124,11 @@ const Hero: React.FC = () => {
             </a>
           </motion.div>
         </motion.div>
-        
+
         <motion.div className="hero-image" variants={itemVariants}>
           <div className="image-container">
             <img
-              src={import.meta.env.BASE_URL + 'assets/profile-pic.jpg'} // MODIFIED THIS LINE
+              src={import.meta.env.BASE_URL + 'assets/profile-pic.jpg'}
               alt="Antony Hyson Seltran"
               className="profile-image"
             />
@@ -129,7 +136,7 @@ const Hero: React.FC = () => {
           </div>
         </motion.div>
       </motion.div>
-      
+
       <motion.button
         className="scroll-indicator"
         onClick={scrollToNext}
