@@ -33,24 +33,17 @@ Ready to see my portfolio in action?
 If you're interested in diving into the codebase or running this portfolio on your own machine, here's how:
 
     Clone the repository:
-    Bash
-
-git clone https://github.com/Antonyhyson/antony-hyson-seltran.git
+    Bash git clone https://github.com/Antonyhyson/antony-hyson-seltran.git
 
 Navigate into the project directory:
-Bash
-
-cd antony-hyson-seltran
+Bash cd antony-hyson-seltran
 
 Install dependencies:
-Bash
-
-npm install
+Bash npm install
 
 Start the development server:
-Bash
 
-    npm run dev
+    Bash npm run dev
 
     The application should open automatically in your browser at http://localhost:5173 (or a similar port if 5173 is in use).
 
