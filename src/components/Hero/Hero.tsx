@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Download, Mail, Github, Linkedin, ChevronDown, Camera } from 'lucide-react'; // Import Camera icon
+import { Download, Mail, Github, Linkedin, ChevronDown, Camera } from 'lucide-react';
 import './Hero.css';
+
+const Hero3DShield = lazy(() => import('./Hero3DShield'));
 
 const Hero: React.FC = () => {
   const [ref, inView] = useInView({
@@ -14,9 +16,7 @@ const Hero: React.FC = () => {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+      transition: { staggerChildren: 0.2 },
     },
   };
 
@@ -34,17 +34,11 @@ const Hero: React.FC = () => {
   };
 
   const handleContact = () => {
-    const element = document.querySelector('#contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToNext = () => {
-    const element = document.querySelector('#about');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -54,7 +48,7 @@ const Hero: React.FC = () => {
         className="hero-container"
         variants={containerVariants}
         initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+        animate={inView ? 'visible' : 'hidden'}
       >
         <motion.div className="hero-content" variants={itemVariants}>
           <motion.div className="hero-greeting" variants={itemVariants}>
@@ -87,7 +81,6 @@ const Hero: React.FC = () => {
               <Mail size={18} />
               Contact Me
             </button>
-            {/* --- THIS IS THE NEW BUTTON --- */}
             <button
               className="btn btn-secondary"
               onClick={() => window.open('https://antonyhyson.github.io/photography-portfolio/', '_blank')}
@@ -98,39 +91,36 @@ const Hero: React.FC = () => {
           </motion.div>
 
           <motion.div className="hero-social" variants={itemVariants}>
-            <a
-              href="https://www.linkedin.com/in/antonyhysonseltran"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
+            <a href="https://www.linkedin.com/in/antonyhysonseltran" target="_blank" rel="noopener noreferrer" className="social-link">
               <Linkedin size={20} />
             </a>
-            <a
-              href="https://github.com/Antonyhyson"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-            >
+            <a href="https://github.com/Antonyhyson" target="_blank" rel="noopener noreferrer" className="social-link">
               <Github size={20} />
             </a>
-            <a
-              href="mailto:work.antonyhyson@gmail.com"
-              className="social-link"
-            >
+            <a href="mailto:work.antonyhyson@gmail.com" className="social-link">
               <Mail size={20} />
             </a>
           </motion.div>
         </motion.div>
 
+        {/* 3D Shield replaces profile image */}
         <motion.div className="hero-image" variants={itemVariants}>
-          <div className="image-container">
-            <img
-              src={import.meta.env.BASE_URL + 'assets/profile-pic.jpg'}
-              alt="Antony Hyson Seltran"
-              className="profile-image"
-            />
-            <div className="image-glow"></div>
+          <div className="hero-3d-container">
+            {/* Profile image floating in front */}
+            <div className="profile-float">
+              <img
+                src={import.meta.env.BASE_URL + 'assets/profile-pic.jpg'}
+                alt="Antony Hyson Seltran"
+                className="profile-image-small"
+              />
+              <div className="profile-ring" />
+            </div>
+            {/* 3D Shield behind */}
+            <div className="shield-canvas-wrapper">
+              <Suspense fallback={<div className="shield-placeholder" />}>
+                <Hero3DShield />
+              </Suspense>
+            </div>
           </div>
         </motion.div>
       </motion.div>

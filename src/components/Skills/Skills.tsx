@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Shield, Code, Network, Lock, Award } from 'lucide-react'; // Changed AlertTriangle to Award
+import { Shield, Code, Network, Lock, Award } from 'lucide-react';
 import './Skills.css';
+
+const Skills3DRadar = lazy(() => import('./Skills3DRadar'));
 
 const Skills: React.FC = () => {
   const [ref, inView] = useInView({
@@ -104,6 +106,14 @@ const Skills: React.FC = () => {
             <p className="section-subtitle">
               Technical proficiencies and certifications that drive my cybersecurity practice
             </p>
+          </motion.div>
+
+          {/* 3D Orbital Skills Visualization */}
+          <motion.div className="skills-3d-wrapper" variants={itemVariants}>
+            <Suspense fallback={<div className="skills-3d-placeholder" />}>
+              <Skills3DRadar />
+            </Suspense>
+            <p className="skills-3d-caption">Core Competency Orbit</p>
           </motion.div>
 
           <div className="skills-content">
