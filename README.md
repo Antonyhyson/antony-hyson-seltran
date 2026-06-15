@@ -33,32 +33,24 @@ Ready to see my portfolio in action?
 If you're interested in diving into the codebase or running this portfolio on your own machine, here's how:
 
     Clone the repository:
-    Bash
-
-git clone https://github.com/Antonyhyson/antony-hyson-seltran.git
+    Bash git clone https://github.com/Antonyhyson/antony-hyson-seltran.git
 
 Navigate into the project directory:
-Bash
-
-cd antony-hyson-seltran
+    Bash cd antony-hyson-seltran
 
 Install dependencies:
-Bash
-
-npm install
+    Bash npm install
 
 Start the development server:
-Bash
 
-    npm run dev
+    Bash npm run dev
 
     The application should open automatically in your browser at http://localhost:5173 (or a similar port if 5173 is in use).
 
 ✉️ Let's Connect!
 
-I'm always open to new opportunities, collaborations, and discussions within the [Your Primary Field/Profession] space. Feel free to reach out to me!
+I'm always open to new opportunities, collaborations, and discussions within the space. Feel free to reach out to me!
 
-    LinkedIn: [Your LinkedIn Profile URL, e.g., https://www.linkedin.com/in/antonyhyson/]
-    GitHub: [Your GitHub Profile URL, e.g., https://github.com/Antonyhyson]
+    LinkedIn: https://www.linkedin.com/in/antonyhyson/]
 
 Thank you for visiting my portfolio. I hope you enjoy exploring my work!
